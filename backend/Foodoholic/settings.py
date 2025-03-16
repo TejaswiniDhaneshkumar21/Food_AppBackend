@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-jj@esk^s3$g)3!q+#ay!*pxzvt$#t@70s96#%3v*htqllzrq+l
 DEBUG = True
 
 # Allow frontend access
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost","*"]
 
 # Application definition
 INSTALLED_APPS = [
