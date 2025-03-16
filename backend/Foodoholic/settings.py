@@ -64,17 +64,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Foodoholic.wsgi.application'
 
 # Database
-DATABASES = {
+DATABASES = DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'FruitDB',          # Replace with your DB name
-        'USER': 'admin',            # Replace with your MySQL username
-        'PASSWORD': 'Pranav123',    # Replace with your MySQL password
-        'HOST': 'fruitdb.cnszzkwvqydh.us-east-1.rds.amazonaws.com',  # RDS endpoint or 'localhost'
-        'PORT': '3306',
-        'OPTIONS': {},              # Must be a valid dict
-    }
+        'NAME': 'FruitDB',
+        'USER': 'root',
+        'PASSWORD': 'Pranav@123',
+        'HOST': 'localhost',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
+    },
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
