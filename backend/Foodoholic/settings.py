@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-jj@esk^s3$g)3!q+#ay!*pxzvt$#t@70s96#%3v*htqllzrq+l
 DEBUG = True
 
 # Allow frontend access
-ALLOWED_HOSTS = ["127.0.0.1", "localhost","*"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -67,14 +67,11 @@ WSGI_APPLICATION = 'Foodoholic.wsgi.application'
 DATABASES = DATABASES = DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'MyRealDB',
-        'USER': 'root',
-        'PASSWORD': 'MyStrongPassword!',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        },
+        'NAME': 'FruitDB',
+        'USER': 'admin',
+        'PASSWORD': 'Pranav123',
+        'HOST': 'fruitdb.cnszzkwvqydh.us-east-1.rds.amazonaws.com',
+        'PORT': '3306'
     },
 }
 
@@ -96,10 +93,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS CONFIGURATION: Allow Frontend Requests from 127.0.0.1:5500
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:5500",  # Allow frontend running on Live Server
-    "http://localhost:5500",  # Sometimes needed for localhost access
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Allow all request methods for CORS
 CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
