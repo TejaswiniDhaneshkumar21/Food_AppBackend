@@ -64,15 +64,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Foodoholic.wsgi.application'
 
 # Database
-DATABASES = DATABASES = DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'FruitDB',
         'USER': 'admin',
         'PASSWORD': 'Pranav123',
         'HOST': 'fruitdb.cnszzkwvqydh.us-east-1.rds.amazonaws.com',
-        'PORT': '3306'
-    },
+        'PORT': '3306'     
+
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [

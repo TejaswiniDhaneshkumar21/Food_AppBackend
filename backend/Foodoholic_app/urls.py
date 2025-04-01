@@ -1,9 +1,14 @@
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import FoodInfoViewSet
+from rest_framework import routers
+from . import views
 
-router = DefaultRouter()
-router.register(r'', FoodInfoViewSet, basename='foodinfo')
+router = routers.DefaultRouter()
+def new_func(router):
+    router.register(r'foodinfo', views.FoodInfoViewSet)
 
-urlpatterns = router.urls
+new_func(router)
 
+urlpatterns = [
+    path('', include(router.urls)), # type: ignore
+    path('health/', views.health_check, name='health_check'),
+]
