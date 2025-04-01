@@ -3,12 +3,9 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-def new_func(router):
-    router.register(r'foodinfo', views.FoodInfoViewSet)
-
-new_func(router)
+router.register(r'', views.FoodInfoViewSet, basename='foodinfo')
 
 urlpatterns = [
-    path('', include(router.urls)), # type: ignore
+    path('', include(router.urls)),  # The FoodInfoViewSet now handles the root endpoint.
     path('health/', views.health_check, name='health_check'),
 ]
