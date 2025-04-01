@@ -63,7 +63,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Foodoholic.wsgi.application'
 
-# Database
+# Database configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
